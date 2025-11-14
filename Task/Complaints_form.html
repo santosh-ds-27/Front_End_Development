@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Complaints</title>
+</head>
+<body>
+  <h2>Complaints</h2>
+  <p>Help us improve our service.</p>
+  <hr>
+
+  <form>
+    <table>
+      <tr>
+        <td>Full name <span style="color:red">*</span></td>
+        <td>
+          <input type="text" name="firstName" placeholder="First">
+          <input type="text" name="lastName" placeholder="Last">
+        </td>
+      </tr>
+      <tr>
+        <td>Email <span style="color:red">*</span></td>
+        <td><input type="email" name="email" required></td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td><input type="text" name="phone"></td>
+      </tr>
+      <tr>
+        <td>Where did we go wrong? <span style="color:red">*</span></td>
+        <td><textarea name="complaint" rows="4" cols="40" required></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="Submit">
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

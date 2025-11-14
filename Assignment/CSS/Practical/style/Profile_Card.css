@@ -1,0 +1,76 @@
+/* Center the card on the page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f6f9;
+  font-family: Arial, sans-serif;
+}
+
+/* Profile Card */
+.card {
+  width: 300px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+
+  /* border-box ensures padding and border are included in width */
+  box-sizing: border-box;
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 4px solid #007BFF;
+  margin-bottom: 15px;
+
+  /* content-box: image size does NOT include border */
+  box-sizing: content-box;
+}
+
+/* User Name */
+.user-name {
+  margin: 10px 0;
+  font-size: 22px;
+  color: #333;
+}
+
+/* User Bio */
+.user-bio {
+  font-size: 14px;
+  color: #666;
+  padding: 10px;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+
+  /* Demonstrating content-box for text area */
+  box-sizing: content-box;
+}
+
+/* Follow Button */
+.follow-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+
+  /* border-box ensures padding fits within button size */
+  box-sizing: border-box;
+  transition: background 0.3s;
+}
+
+.follow-btn:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,141 @@
+/* Mobile */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .nav-ul {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .nav-ul .nav-li {
+        display: block;
+        margin: 10px 0;
+    }
+
+
+    .banner_img {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .banner_img-text {
+        max-width: 100%;
+    }
+
+    .banner_img-text h1 {
+        font-size: 52px;
+    }
+
+    .banner_img-text h2 {
+        font-size: 32px;
+    }
+
+    .banner_img-text p {
+        font-size: 18px;
+    }
+
+    .banner_img-text button {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-images .small-img {
+        position: static;
+        width: 70%;
+        margin-top: 15px;
+    }
+
+    .voucher-box {
+        flex-direction: column;
+    }
+
+    .voucher-left,
+    .voucher-right {
+        width: 100%;
+    }
+
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container_video {
+        width: 100%;
+
+
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-container,
+    .form-container {
+        min-width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+.h1_bg {
+  
+  width: 100%;
+}
+.footer-container {
+   
+     margin: 0 auto; 
+}
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .banner_img-text h1 {
+        font-size: 38px;
+    }
+
+    .banner_img-text h2 {
+        font-size: 24px;
+    }
+
+    .banner_img-text p {
+        font-size: 16px;
+    }
+
+    .banner_img-text button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}

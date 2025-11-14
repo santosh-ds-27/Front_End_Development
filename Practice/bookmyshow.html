@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow Clone Navbar</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+        }
+
+        /* ================== NAVBAR – White & Tight ================== */
+        .navbar {
+            background: #fff !important;
+            padding: 10px 16px;
+            height: 64px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 36px;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .search-input {
+            border: 1px solid #e0e0e0;
+            padding: 8px 16px;
+            width: 100%;
+            font-size: 14px;
+            background: #f5f5f5;
+            outline: none;
+            border-radius: 6px;
+        }
+
+        .search-input:focus {
+            background: #fff;
+            border-color: #f84464;
+            box-shadow: 0 0 0 2px rgba(248, 68, 100, .2);
+        }
+
+        .location-btn {
+            background: none;
+            border: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        /* ================== SIGN-IN BUTTON  ================== */
+        .signin-btn {
+            background: #f84464;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            margin-left: 12px;
+        }
+
+        .signin-btn:hover {
+            background: #e03a5a;
+        }
+
+        /* ================== HAMBURGER – ALWAYS VISIBLE ================== */
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            margin-left: 12px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* ================== OFFCANVAS MENU ================== */
+        .offcanvas {
+            width: 280px !important;
+        }
+
+        .offcanvas-header {
+            background: #333545;
+            color: #fff;
+            padding: 1rem 1.5rem;
+        }
+
+        .offcanvas-body {
+            padding: 0;
+        }
+
+        .offcanvas-menu a {
+            display: block;
+            padding: 14px 1.5rem;
+            color: #1a1a1a;
+            font-weight: 500;
+            font-size: 15px;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+        }
+
+        .offcanvas-menu a:hover {
+            background: #f8f9fa;
+            color: #f84464;
+        }
+
+        .offcanvas-menu .signin-link {
+            color: #f84464;
+            font-weight: 600;
+        }
+
+        /* ================== LOGIN MODAL ================== */
+        .login-modal .modal-content {
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .login-modal .modal-header {
+            border: none;
+            padding: 0 0 1rem;
+        }
+
+        .login-modal .modal-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .login-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .btn-google {
+            background: #fff;
+            border: 1.5px solid #ddd;
+            color: #333;
+        }
+
+        .btn-google:hover {
+            background: #f8f9fa;
+        }
+
+        .btn-email {
+            background: #f84464;
+            color: #fff;
+        }
+
+        .btn-email:hover {
+            background: #e03a5a;
+        }
+
+        .btn-apple {
+            background: #000;
+            color: #fff;
+        }
+
+        .btn-apple:hover {
+            background: #111;
+        }
+
+        .login-btn i {
+            font-size: 20px;
+        }
+
+        /* ================== MODALS ================== */
+        .city-item,
+        .movie-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .city-item_1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .city-item:hover,
+        .movie-item:hover {
+            background: #f8f9fa;
+        }
+
+        .city-item i {
+            font-size: 18px;
+            color: #f84464;
+        }
+
+        .movie-info {
+            flex: 1;
+        }
+
+        .movie-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: #1a1a1a;
+        }
+
+        .movie-genre {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .movie-poster {
+            width: 50px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .modal-header,
+        .modal-body {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .modal-header {
+            border-bottom: none;
+        }
+
+        .city_model {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 576px) {
+            .search-bar {
+                max-width: 100%;
+                margin: 0 8px;
+            }
+
+            .location-btn {
+                font-size: 13px;
+            }
+
+            .signin-btn {
+                font-size: 13px;
+                padding: 5px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ====================== NAVBAR – LEFT: LOGO + SEARCH | RIGHT: LOCATION + SIGNIN + HAMBURGER ====================== -->
+    <nav class="navbar">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+
+            <!-- LEFT: Logo + Search -->
+            <div class="d-flex align-items-center flex-grow-1">
+                <a class="navbar-brand me-3" href="#">
+                    <img src="logo.png" alt="BookMyShow">
+                </a>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search for Movies, Events, Plays, Sports..."
+                        data-bs-toggle="modal" data-bs-target="#movieModal">
+                </div>
+            </div>
+
+            <!-- RIGHT: Location + Sign-in + Hamburger -->
+            <div class="d-flex align-items-center">
+
+                <!-- Location (hidden on small screens) -->
+                <button class="location-btn d-none d-md-flex" data-bs-toggle="modal" data-bs-target="#cityModal">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span id="selectedCity">Ahmedabad</span>
+                    <i class="bi bi-chevron-down"></i>
+                </button>
+
+                <!-- Sign-in Button (hidden on small screens) -->
+                <button class="signin-btn d-none d-md-block" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Sign in
+                </button>
+
+                <!-- Hamburger – ALWAYS VISIBLE -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====================== OFFCANVAS MENU ====================== -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="offcanvas-menu">
+                <a href="#">Movies</a>
+                <a href="#">Stream</a>
+                <a href="#">Events</a>
+                <a href="#">Plays</a>
+                <a href="#">Sports</a>
+                <a href="#">Activities</a>
+                <hr class="m-0">
+                <a href="#" class="signin-link" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================== LOGIN MODAL ====================== -->
+    <div class="modal fade login-modal" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Welcome Back!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <button class="login-btn btn-google">
+                        <i class="bi bi-google"></i> Continue with Google
+                    </button>
+                    <button class="login-btn btn-email">
+                        <i class="bi bi-envelope-fill"></i> Continue with Email
+                    </button>
+                    <button class="login-btn btn-apple">
+                        <i class="bi bi-apple"></i> Continue with Apple
+                    </button>
+                    <div class="text-center mt-3">
+                        <small class="text-muted">
+                            By continuing, you agree to our <a href="#" class="text-decoration-underline">Terms</a> & <a
+                                href="#" class="text-decoration-underline">Privacy</a>.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================== CITY MODAL ====================== -->
+    <div class="modal fade" id="cityModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Select Your City</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="city_model">
+                        <div class="city-item_1" onclick="selectCity('Delhi NCR')"><img src="ncr.avif" alt=""> Delhi
+                        </div>
+                        <div class="city-item_1" onclick="selectCity('Mumbai')"><img src="mumbai.avif" alt=""> Mumbai
+                        </div>
+                        <div class="city-item_1" onclick="selectCity('Ahmedabad')"><img src="ahmedabad.png" alt="">
+                            Ahmedabad</div>
+                        <div class="city-item_1" onclick="selectCity('Hyderabad')"><img src="hyd.png" alt=""> Hyderabad
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================== MOVIE MODAL ====================== -->
+    <div class="modal fade" id="movieModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Search Results</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="movie-item">
+                        <div class="movie-info">
+                            <div class="movie-title">Chaniya Toli</div>
+                        </div>
+                        <img src="clapperboard.png" class="movie-poster">
+                    </div>
+                    <hr>
+                    <div class="movie-item">
+                        <div class="movie-info">
+                            <div class="movie-title">Kantara: A Legend Chapter-1</div>
+                        </div>
+                        <img src="clapperboard.png" class="movie-poster">
+                    </div>
+                    <hr>
+                    <div class="movie-item">
+                        <div class="movie-info">
+                            <div class="movie-title">Thamma</div>
+                        </div>
+                        <img src="clapperboard.png" class="movie-poster">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================== Recommended Movies Cards ====================== -->
+    <div class="container my-5">
+        <h2 class="mb-4">Recommended Movies</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="chaniya__toli.avif" class="card-img-top" alt="Chaniya Toli">
+                    <div class="card-body">
+                        <h5 class="card-title">Chaniya Toli</h5>
+                        <p class="card-text">Action/Comedy/Crime</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="thamma.avif" class="card-img-top" alt="Thama">
+                    <div class="card-body">
+                        <h5 class="card-title">Thama</h5>
+                        <p class="card-text">Comedy/Horror/Romantic/Supernatural</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="deewaniyat.avif" class="card-img-top" alt="Ek Deewane Ki Deewaniyat">
+                    <div class="card-body">
+                        <h5 class="card-title">Ek Deewane Ki Deewaniyat</h5>
+                        <p class="card-text">Drama/Romantic/Thriller</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="misharee.avif" class="card-img-top" alt="Misri">
+                    <div class="card-body">
+                        <h5 class="card-title">Misri</h5>
+                        <p class="card-text">Comedy/Romantic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="kantara.avif" class="card-img-top" alt="Kantara">
+                    <div class="card-body">
+                        <h5 class="card-title">Kantara: A Legend Chapter-1</h5>
+                        <p class="card-text">Adventure/Drama/Thriller</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================== JS ====================== -->
+    <script>
+        function selectCity(city) {
+            document.getElementById('selectedCity').textContent = city;
+            bootstrap.Modal.getInstance(document.getElementById('cityModal')).hide();
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

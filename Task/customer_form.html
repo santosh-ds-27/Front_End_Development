@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer_form</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+          <legend>Customer</legend>
+      
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="name" required><br><br>
+      
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" required><br><br>
+      
+          <label for="investment">Investment</label>
+          <select id="investment" name="investment">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <!-- Add more options as needed -->
+          </select><br><br>
+      
+          <label for="dateJoined">Date Joined*</label>
+          <input type="date" id="dateJoined" name="dateJoined" required>
+          <!-- A calendar icon next to the date input is typically added with CSS/JavaScript libraries, not pure HTML. --><br><br>
+      
+          <label for="active">Active</label>
+          <input type="checkbox" id="active" name="active"><br><br>
+      
+          <button type="submit">OK</button>
+          <button type="button">Cancel</button>
+        </fieldset>
+      </form>
+</body>
+</html>

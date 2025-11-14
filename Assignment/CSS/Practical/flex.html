@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Flexbox Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header + Navbar */
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 1rem;
+    }
+    nav {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Container */
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* Sidebar */
+    aside {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      width: 220px;
+      flex-shrink: 0;
+    }
+    aside ul {
+      list-style: none;
+    }
+    aside li {
+      margin: 0.5rem 0;
+    }
+
+    /* Main Content */
+    main {
+      background: #f9f9f9;
+      flex: 1;
+      padding: 2rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 0.5rem;
+    }
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: #4CAF50;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      aside {
+        width: 100%;
+        text-align: center;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header + Navbar -->
+  <header>
+    <h1>🌐 My Website</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Sidebar + Main -->
+  <div class="container">
+    <aside>
+      <h2>📂 Sidebar</h2>
+      <ul>
+        <li>Dashboard</li>
+        <li>Profile</li>
+        <li>Settings</li>
+      </ul>
+    </aside>
+
+    <main>
+      <h2>Welcome to the Main Content</h2>
+      <p>
+        This is the main content area where your articles, blog posts, 
+        or text will appear.  
+        Flexbox ensures the sidebar stays aligned with this section, 
+        and everything adjusts responsively.
+      </p>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Flexbox Website. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Help</a>
+    </div>
+  </footer>
+
+</body>
+</html>

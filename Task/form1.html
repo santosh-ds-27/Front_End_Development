@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- pattern key attribute [A-Za-z0-9] -->
+
+
+    <!-- shubhamjadav.tops@gmail.com -->
+
+    <table align="center">
+        <caption>Form data</caption>
+        <form action="">
+            <tr>
+                <td><label for="">Enter your name</label></td>
+                <!-- <td><input type="text" title="Your name" placeholder="Enter your Name" pattern="[A-Za-z]+" required></td> -->
+                <td><input type="text" title="Your name" placeholder="Enter your Name" pattern="[A-Z][A-Za-z]{3,7}" required>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="">Enter your srname</label></td>
+                <!-- <td><input type="text" title="Your name" placeholder="Enter your Name" pattern="[A-Za-z]+" required></td> -->
+                <td><input type="text" title="Your Srname" placeholder="Enter your srName" pattern="[A-Za-z]{3,7}"
+                        required></td>
+            </tr>
+             <tr>
+                <td><label for="">Enter your Email</label></td>
+                <!-- <td><input type="text" title="Your name" placeholder="Enter your Name" pattern="[A-Za-z]+" required></td> -->
+                <td><input type="text" title="Your Email" placeholder="Enter your Email" pattern="[A-Za-z]{3,7}"
+                        required></td>
+            </tr>
+
+            <tr>
+          
+                <td>
+                    <!-- 72315426432 -->
+                    <label for="">Enter your phone number</label>
+                </td>
+                <!-- <td><input type="tel" placeholder="Enter your Phone" required pattern="[0-9]+"></td> -->
+                <!-- <td><input type="tel" placeholder="Enter your Phone" maxlength="10" required pattern="[0-9]{10}"></td> 
+                 -->
+                 <td><input type="tel" placeholder="Enter your Phone" maxlength="10" required pattern="[6-9][0-9]{9}"></td>
+            
+            </tr>
+            <tr>
+                <td><label for="">Enter your password</label></td>
+                <td><input type="password" pattern="[A-Z][A-Za-z0-9]{8,12}" required></td>
+            </tr>
+            <tr>
+                <td><label for="">Qunity</label></td>
+                <td><input type="number" min="1" max="5" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit"></td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>

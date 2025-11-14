@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            height: 400px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <img src="download.jpg" height="100%" width="100%" class="img" alt="">
+        <img src="download_1.jpg" height="100%" width="100%" class="img" alt="">
+        <img src="images.jpg" height="100%" width="100%" class="img" alt="">
+        <img src="images_1.jpg" height="100%" width="100%" class="img" alt="">
+    </div>
+
+
+    <script>
+        let img_tag = document.getElementsByClassName("img")
+        console.log(img_tag)
+
+        let index = 0
+
+        function slider() {
+
+            // hide 
+            for (let i = 0; i < img_tag.length; i++) {
+                img_tag[i].style.display = "none";
+                // console.log(img_tag[i])
+            }
+            // show at 
+            img_tag[index].style.display = "block"
+            index++;
+
+            if (index == 4) {
+                index = 0
+            }
+
+            setTimeout(slider, 1000)
+        }
+        slider()
+
+    </script>
+</body>
+
+</html>

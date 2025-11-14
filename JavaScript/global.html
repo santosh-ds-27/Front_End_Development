@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Globle variable</title>
+</head>
+
+<body>
+    <script>
+        function abc() {
+            //var x = "this is a variable ";
+            window.x = " this is variable";
+            document.write(window.x);
+        }
+        abc()
+        ds()
+
+        document.write("<br>");
+        document.write(window.x);
+
+        
+        function ds() {
+            document.write("<br>");
+            document.write(window.x);
+        }
+    </script>
+</body>
+
+</html>

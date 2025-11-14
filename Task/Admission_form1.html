@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admissions Form</title>
+</head>
+<body style="background-color: darkolivegreen;" style="border-style: double;">
+    
+    <h2 >Admissions Form</h2>
+    <p>Enter your admission information below</p>
+
+    <form>
+        <label for="name">Name *</label><br>
+        <td>
+                    <input type="text" placeholder= " first name"></td>
+                <td>
+                    <input type="text" placeholder= " second name"></td>
+                <td>
+                    <input type="text" placeholder= " last name"></td><br><td>
+                  
+               
+        <label for="birthdate">Birth Date </label><br>
+        <input type="date" id="birthdate" name="birthdate"><br><br>
+
+        <label>Gender *</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="decline_gender" name="gender" value="decline">
+        <label for="decline_gender">Decline to Answer</label><br><br>
+
+        <label>Are you Hispanic or Latino? *</label><br>
+        <input type="radio" id="no" name="hispanic" value="no">
+        <label for="no">No</label><br>
+        <input type="radio" id="yes" name="hispanic" value="yes">
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="decline_ethnicity" name="hispanic" value="decline">
+        <label for="decline_ethnicity">Decline to Answer</label><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

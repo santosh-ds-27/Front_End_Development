@@ -1,0 +1,40 @@
+/* Unique styling for the entire form */
+#contact-form {
+  background-color: #f2f6fc;  /* light blue-gray background */
+  width: 350px;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+h2{
+    text-align: center;
+}
+/* Common styling for form fields (class selector) */
+.form-field {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Unique styling for submit button (ID selector) */
+#submit-btn {
+  background-color: #007BFF; /* Bootstrap blue */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+/* Hover effect for submit button */
+#submit-btn:hover {
+  background-color: #0056b3; /* darker blue */
+}
