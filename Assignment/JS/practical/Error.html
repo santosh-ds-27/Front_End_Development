@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Try-Catch Divide by Zero Example</title>
+</head>
+
+<body>
+    
+
+    <script>
+        try {
+          
+            let num = parseFloat(prompt("Enter a number:"));
+
+            if (num === 0) {
+                throw new Error("Cannot divide zero by zero!");
+            }
+
+            let result = num / 0;
+
+            if (!isFinite(result)) {
+                throw new Error("Division by zero is not allowed!");
+            }
+
+
+            alert("Result: " + result);
+        }
+        catch (error) {
+
+            alert("Error: " + error.message);
+            console.log("Error details:", error);
+        }
+        finally {
+
+            console.log("Program completed.");
+        }
+    </script>
+</body>
+
+</html>
