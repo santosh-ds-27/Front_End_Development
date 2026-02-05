@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            border: 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="h1" onmouseenter="addData()" onmouseleave="removedata()">Hello this Mouse evenet</h1>
+
+    <button onclick="addData()">Add data</button>
+
+    <script>
+        let h1_tag = document.getElementById("h1")
+
+        function addData() {
+            h1_tag.innerText = "Hello Inner TExt";
+            h1_tag.style.background = "red"
+        }
+
+        function removedata() {
+            h1_tag.innerText = "Hello mouse leave";
+            h1_tag.style.background = "blue"
+        }
+
+    </script>
+</body>
+
+</html>
