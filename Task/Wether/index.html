@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #222;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 470px;
+            background: linear-gradient(180deg, #4BA2F2, #6BB5F5, #A3D4FB);
+            color: black;
+            margin: 50px auto 0;
+            border-radius: 20px;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .search {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .search input {
+            border: 0;
+            outline: 0;
+            background: #ebfffc;
+            color: #555;
+            padding: 10px 30px;
+            height: 60px;
+            border-radius: 50px;
+            /* float: ; */
+            margin-right: 16px;
+            font-size: 20px;
+        }
+
+        .search button {
+            border: 0;
+            outline: 0;
+            background: #ebfffc;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .search button img {
+            width: 20px;
+        }
+
+        .weather-icon {
+            width: 150px;
+            /* margin-top: 0px; */
+        }
+
+        .weather h1 {
+            font-size: 80px;
+            font-weight: 500;
+        }
+
+        .weather h2 {
+            font-size: 45px;
+            font-weight: 400;
+            margin-top: -10px;
+        }
+
+        .details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin-top: 10px;
+        }
+
+        .col {
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .col img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .humidity,
+        .wind {
+            font-size: 28px;
+        }
+
+        .col p {
+            margin: 0;
+        }
+
+        .weather {
+             /* display: none;  */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter city name" spellcheck="false">
+            <button><img src="image/search.png" alt=""></button>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-primary d-block p-2 bg-light text-black dropdown-toggle m-3 w-100  rounded-pill p-3 "
+                type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu p-4 " style="width: 400px;" aria-labelledby="dropdownMenuButton1">
+                <div class="row">
+
+                    <!-- Column 1 -->
+                    <div class="col-4">
+                        <li><a class="dropdown-item" onclick="weather('Ahmedabad')" href="#">Ahmedabad</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Amreli')" href="#">Amreli</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Anand')" href="#">Anand</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Aravalli')" href="#">Aravalli</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Banaskantha')" href="#">Banaskantha</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Bharuch')" href="#">Bharuch</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Bhavnagar')" href="#">Bhavnagar</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Botad')" href="#">Botad</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Chhota Udaipur')" href="#">Chhota Udaipur</a>
+                        </li>
+                        <li><a class="dropdown-item" onclick="weather('Dahod')" href="#">Dahod</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Dang')" href="#">Dang</a></li>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="col-4">
+                        <li><a class="dropdown-item" onclick="weather('Dwarka')" href="#">Dwarka</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Gandhinagar')" href="#">Gandhinagar</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Gir Somnath')" href="#">Gir Somnath</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Jamnagar')" href="#">Jamnagar</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Junagadh')" href="#">Junagadh</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Kheda')" href="#">Kheda</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Kutch')" href="#">Kutch</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Mahisagar')" href="#">Mahisagar</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Mehsana')" href="#">Mehsana</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Morbi')" href="#">Morbi</a></li>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="col-4">
+                        <li><a class="dropdown-item" onclick="weather('Narmada')" href="#">Narmada</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Navsari')" href="#">Navsari</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Panchmahal')" href="#">Panchmahal</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Patan')" href="#">Patan</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Porbandar')" href="#">Porbandar</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Rajkot')" href="#">Rajkot</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Sabarkantha')" href="#">Sabarkantha</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Surat')" href="#">Surat</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Surendranagar')" href="#">Surendranagar</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Tapi')" href="#">Tapi</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Vadodara')" href="#">Vadodara</a></li>
+                        <li><a class="dropdown-item" onclick="weather('Valsad')" href="#">Valsad</a></li>
+                    </div>
+
+                </div>
+            </ul>
+        </div>
+        <div class="weather">
+            <img src="image/rain.png" class="weather-icon" alt="">
+            <h1 class="temp">25°C</h1>
+            <h2 class="city">Ahmedabad</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="image/humidity.png" alt="">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="image/wind.png" alt="">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        let apikey = "cf8f0a45d953361e4e7a3093e2e4f45b"
+
+        let apiid = "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+
+        let searchinp = document.querySelector(".search input");
+        let serchbtn = document.querySelector(".search button");
+
+        async function weather(city) {
+            const res = await fetch(apiid + city + `&appid=${apikey}`)
+
+            const result = await res.json()
+            console.log(result)
+
+            document.querySelector(".temp").innerHTML = Math.round(result.main.temp) + "°C"
+            document.querySelector(".city").innerHTML = result.name;
+            document.querySelector(".humidity").innerHTML = result.main.humidity;
+            document.querySelector(".wind").innerHTML = result.wind.speed + " Km/h";
+
+            document.querySelector(".weather").style.display = "block"
+
+
+
+        }
+        serchbtn.addEventListener("click", () => {
+            weather(searchinp.value)
+        })
+        document.querySelectorAll(".dropdown-item").forEach((data, index) => {
+
+        })
+
+
+    </script>
+</body>
+
+</html>
